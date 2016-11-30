@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/basic">
+<head>
+<title>Shopping List Create</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body layout:fragment="content">
+
+	<div class="row">
+	
+	<h1>Add Shopping List</h1>
+	
+		<form method="POST" th:object="${lists}">
+		<input type="hidden" th:value="*{id}"/>
+		
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" name="name" placeholder="Name" th:field="*{name}"/>
+				<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+			</div>
+			<div class="form-group">
+				<label for="color">Color</label> 
+				<input type="text" class="form-control" name="color" placeholder="Color" th:field="*{color}"/>
+				<span th:if="${#fields.hasErrors('color)}" th:errors="*{color}">Color Error</span>
+			</div>
+			
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</body>
+</html>
