@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author summerpratt
- *
- */
-package templates;
