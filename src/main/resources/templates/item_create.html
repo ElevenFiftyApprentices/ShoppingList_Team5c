@@ -19,16 +19,6 @@
 				<input type="text" class="form-control" name="contents" placeholder="Content" th:field="*{contents}"/>
 				<span th:if="${#fields.hasErrors('contents')}" th:errors="*{contents}">Content Error</span>
 			</div>
-			<div class="form-group">
-				<label for="createdUtc">Created UTC</label> 
-				<input type="text" class="form-control" name="createdUtc" placeholder="Created UTC" th:field="*{createdUtc}"/>
-				<span th:if="${#fields.hasErrors('createdUtc')}" th:errors="*{createdUtc}">UTC Error</span>
-			</div>
-			<div class="form-group">
-				<label for="modifiedUtc">Modified UTC</label> 
-				<input type="text" class="form-control" name="modifiedUtc" placeholder="Modified UTC" th:field="*{modifiedUtc}"/>
-				<span th:if="${#fields.hasErrors('modifiedUtc')}" th:errors="*{modifiedUtc}">Modified UTC Error</span>
-			</div>
 			
 			<button type="submit" class="btn btn-default">Submit</button>
 		</form>

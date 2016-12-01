@@ -1,6 +1,7 @@
 package org.elevenfifty.shoppingapplication.beans;
 
-import java.time.OffsetDateTime;
+
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +19,8 @@ public class Notes {
 	
 	public int shoppingListItemId;
 	public String body;
-	public OffsetDateTime createdUtc;
-	public OffsetDateTime modifiedUtc;
+	public Date createdUtc;
+	public Date modifiedUtc;
 	public int getId() {
 		return id;
 	}
@@ -29,10 +30,10 @@ public class Notes {
 	public String getBody() {
 		return body;
 	}
-	public OffsetDateTime getCreatedUtc() {
+	public Date getCreatedUtc() {
 		return createdUtc;
 	}
-	public OffsetDateTime getModifiedUtc() {
+	public Date getModifiedUtc() {
 		return modifiedUtc;
 	}
 	public void setId(int id) {
@@ -44,10 +45,10 @@ public class Notes {
 	public void setBody(String body) {
 		this.body = body;
 	}
-	public void setCreatedUtc(OffsetDateTime createdUtc) {
+	public void setCreatedUtc(Date createdUtc) {
 		this.createdUtc = createdUtc;
 	}
-	public void setModifiedUtc(OffsetDateTime modifiedUtc) {
+	public void setModifiedUtc(Date modifiedUtc) {
 		this.modifiedUtc = modifiedUtc;
 	}
 	
