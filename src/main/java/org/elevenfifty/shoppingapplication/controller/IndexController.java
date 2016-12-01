@@ -154,4 +154,29 @@ public class IndexController {
 	}
 	
 	
+//	----trying to delete all items-----
+	
+	
+	@GetMapping("/item/deleteall")
+	//cannot have @PathVariable(name = "id") Integer id or it will give error saying "missing URI template" for id
+	//in line below
+	//THIS HAS ALL THE ITEMS SHOWING IN A LIST!!! 
+	public String itemDeleteAll(Model model) {
+		model.addAttribute("id");
+		Iterable<Items> u = itemRepo.findAll();
+		model.addAttribute("items", u);
+		return "delete_all_items";
+	}
+	
+	@PostMapping("/item/deleteall")
+	public String itemDeleteAllSave(@ModelAttribute @Valid Items item, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			model.addAttribute("item", item);
+			return "item";
+		} else {
+			itemRepo.deleteAll();
+			return "redirect:/item";
+		}
+	}
+	
 }
