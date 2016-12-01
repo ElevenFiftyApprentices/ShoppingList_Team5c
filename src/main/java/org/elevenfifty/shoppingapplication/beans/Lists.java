@@ -1,5 +1,7 @@
 package org.elevenfifty.shoppingapplication.beans;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,8 +19,8 @@ public class Lists {
 	public int userId;
 	public String name;
 	public String color;
-	public String createdUtc;
-	public String modifiedUtc;
+	public Date createdUtc;
+	public Date modifiedUtc;
 	
 	public int getId() {
 		return id;
@@ -32,10 +34,10 @@ public class Lists {
 	public String getColor() {
 		return color;
 	}
-	public String getCreatedUtc() {
+	public Date getCreatedUtc() {
 		return createdUtc;
 	}
-	public String getModifiedUtc() {
+	public Date getModifiedUtc() {
 		return modifiedUtc;
 	}
 	public void setId(int id) {
@@ -50,10 +52,10 @@ public class Lists {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	public void setCreatedUtc(String createdUtc) {
+	public void setCreatedUtc(Date createdUtc) {
 		this.createdUtc = createdUtc;
 	}
-	public void setModifiedUtc(String modifiedUtc) {
+	public void setModifiedUtc(Date modifiedUtc) {
 		this.modifiedUtc = modifiedUtc;
 	}
 	

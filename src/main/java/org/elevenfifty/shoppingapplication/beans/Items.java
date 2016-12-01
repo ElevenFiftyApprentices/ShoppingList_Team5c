@@ -1,5 +1,8 @@
 package org.elevenfifty.shoppingapplication.beans;
 
+
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,8 +21,8 @@ public class Items {
 	public String contents;
 	public int priority;
 	public boolean isChecked;
-	public String createdUtc;
-	public String modifiedUtc;
+	public Date createdUtc;
+	public Date modifiedUtc;
 	public int getId() {
 		return id;
 	}
@@ -35,10 +38,10 @@ public class Items {
 	public boolean isChecked() {
 		return isChecked;
 	}
-	public String getCreatedUtc() {
+	public Date getCreatedUtc() {
 		return createdUtc;
 	}
-	public String getModifiedUtc() {
+	public Date getModifiedUtc() {
 		return modifiedUtc;
 	}
 	public void setId(int id) {
@@ -56,10 +59,10 @@ public class Items {
 	public void setChecked(boolean isChecked) {
 		this.isChecked = isChecked;
 	}
-	public void setCreatedUtc(String createdUtc) {
+	public void setCreatedUtc(Date createdUtc) {
 		this.createdUtc = createdUtc;
 	}
-	public void setModifiedUtc(String modifiedUtc) {
+	public void setModifiedUtc(Date modifiedUtc) {
 		this.modifiedUtc = modifiedUtc;
 	}
 	
