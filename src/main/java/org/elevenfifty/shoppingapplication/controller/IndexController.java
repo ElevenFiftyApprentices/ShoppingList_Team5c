@@ -1,5 +1,7 @@
 package org.elevenfifty.shoppingapplication.controller;
 
+import java.util.Date;
+
 import javax.validation.Valid;
 
 import org.elevenfifty.shoppingapplication.beans.Items;
@@ -64,16 +66,11 @@ public class IndexController {
 	}
 
 	@PostMapping("/list/create")
-	public String listCreate(@ModelAttribute @Valid Lists list, BindingResult result, Model model) {
-
-		if (result.hasErrors()) {
-			model.addAttribute("list", list);
-			return "list";
-		} else {
-			listRepo.save(list);
-			return "redirect:/list";
-		}
-
+	public String listCreate(Model model, @ModelAttribute @Valid Lists list, BindingResult result) {
+		list.setCreatedUtc(new Date(System.currentTimeMillis()));
+        list.setModifiedUtc(new Date(System.currentTimeMillis()));
+        listRepo.save(list);
+        return "redirect:/list";
 	}
 	
 	@GetMapping("/list/{id}/delete")
@@ -122,14 +119,11 @@ public class IndexController {
 
 	@PostMapping("/item/create")
 	public String itemCreate(@ModelAttribute @Valid Items item, BindingResult result, Model model) {
-
-		if (result.hasErrors()) {
-			model.addAttribute("item", item);
-			return "item";
-		} else {
-			itemRepo.save(item);
-			return "redirect:/item";
-		}
+		
+		item.setCreatedUtc(new Date(System.currentTimeMillis()));
+        item.setModifiedUtc(new Date(System.currentTimeMillis()));
+        itemRepo.save(item);
+        return "redirect:/item";
 
 	}
 	
@@ -154,7 +148,7 @@ public class IndexController {
 	}
 	
 	
-//	----trying to delete all items-----
+//	----delete all items-----
 	
 	
 	@GetMapping("/item/deleteall")
@@ -179,4 +173,14 @@ public class IndexController {
 		}
 	}
 	
+	//---------TRYING TO MAKE CHECKBOXES WORK ---------
+	
+	
+	
+	
+	
+	
 }
+
+
+

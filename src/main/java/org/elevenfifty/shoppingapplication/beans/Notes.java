@@ -1,6 +1,5 @@
 package org.elevenfifty.shoppingapplication.beans;
 
-import java.time.OffsetDateTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
