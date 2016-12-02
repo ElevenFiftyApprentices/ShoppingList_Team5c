@@ -12,7 +12,9 @@
 		<div th:if="${items}">
 			<ul th:object="${items}">
 				<li th:text="*{contents}"></li>
-				<li><a href="/" th:href="@{|/item/{items.id}/edit|}">Edit</a></li>
+				<li th:text="*{createdUtc}"></li>
+				<li th:text="*{modifiedUtc}"></li>
+				<li><a href="/" th:href="@{|/item/${items.id}/edit|}">Edit</a></li>
 
 			</ul>
 		</div>
