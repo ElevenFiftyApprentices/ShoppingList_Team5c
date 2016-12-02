@@ -1,6 +1,8 @@
 package org.elevenfifty.shoppingapplication.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -93,6 +95,30 @@ public class IndexController {
 		}
 	}
 	
+	@GetMapping("/list/{id}/edit")
+	public String listEdit(Model model, @PathVariable(name = "id") Integer id) {
+		model.addAttribute("id", id);
+
+		Lists u = listRepo.findOne(id);
+
+		model.addAttribute("lists", u);
+		return "list_edit";
+	}
+
+	@PostMapping("/list/{id}/edit")
+	public String listEditSave(@PathVariable(name = "id") Integer id, @ModelAttribute @Valid Lists list,
+			BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			model.addAttribute("Lists", list);
+			return "list_edit";
+		}
+		listRepo.save(list);
+		return "redirect:/list/" + list.getId();
+	}
+	
+	
+	
+	
 	//EVERYTHING BELOW IS FOR THE ITEM HTMLS!!
 	
 	@GetMapping("/item")
@@ -173,12 +199,30 @@ public class IndexController {
 		}
 	}
 	
-	//---------TRYING TO MAKE CHECKBOXES WORK ---------
+	@GetMapping("/item/{id}/edit")
+	public String itemEdit(Model model, @PathVariable(name = "id") Integer id) {
+		model.addAttribute("id", id);
+
+		Items u = itemRepo.findOne(id);
+
+		model.addAttribute("items", u);
+		return "item_edit";
+	}
+
+	@PostMapping("/item/{id}/edit")
+	public String itemEditSave(@PathVariable(name = "id") Integer id, @ModelAttribute @Valid Items item,
+			BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			model.addAttribute("Items", item);
+			return "item_edit";
+		}
+		itemRepo.save(item);
+		return "redirect:/item/" + item.getId();
+	}
 	
 	
-	
-	
-	
+	//---------TRYING TO DELETE CHECKED CHECKBOXES  ---------
+
 	
 }
 
