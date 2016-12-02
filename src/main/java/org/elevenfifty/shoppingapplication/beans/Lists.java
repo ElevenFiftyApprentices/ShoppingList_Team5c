@@ -1,6 +1,7 @@
 package org.elevenfifty.shoppingapplication.beans;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,7 @@ public class Lists {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int id;
+	
 	
 	public int userId;
 	public String name;
