@@ -147,6 +147,16 @@ public class IndexController {
 		}
 	}
 	
+	@GetMapping("/item/{id}/edit")
+	public String itemEdit(Model model, @PathVariable(name = "id") Integer id){
+		model.addAttribute("id", id);
+		Items u = itemRepo.findOne(id);
+		model.addAttribute("items", u);
+		return "item_edit";
+	}
+	
+	
+	
 	
 //	----delete all items-----
 	
