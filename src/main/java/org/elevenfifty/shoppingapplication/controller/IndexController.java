@@ -119,14 +119,6 @@ public class IndexController {
 
 	@PostMapping("/item/create")
 	public String itemCreate(@ModelAttribute @Valid Items item, BindingResult result, Model model) {
-
-//		if (result.hasErrors()) {
-//			model.addAttribute("item", item);
-//			return "item";
-//		} else {
-//			itemRepo.save(item);
-//			return "redirect:/item";
-//		}
 		
 		item.setCreatedUtc(new Date(System.currentTimeMillis()));
         item.setModifiedUtc(new Date(System.currentTimeMillis()));
@@ -156,7 +148,7 @@ public class IndexController {
 	}
 	
 	
-//	----trying to delete all items-----
+//	----delete all items-----
 	
 	
 	@GetMapping("/item/deleteall")
@@ -181,4 +173,14 @@ public class IndexController {
 		}
 	}
 	
+	//---------TRYING TO MAKE CHECKBOXES WORK ---------
+	
+	
+	
+	
+	
+	
 }
+
+
+

@@ -1,6 +1,5 @@
 package org.elevenfifty.shoppingapplication.beans;
 
-
 import java.util.Date;
 
 import javax.persistence.Entity;

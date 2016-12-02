@@ -19,6 +19,8 @@ public class Items {
 	public int shoppingListId;
 	public String contents;
 	public int priority;
+	
+	//use boolean to keep it checked!!!
 	public boolean isChecked;
 	public Date createdUtc;
 	public Date modifiedUtc;
