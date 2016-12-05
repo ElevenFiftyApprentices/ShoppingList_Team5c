@@ -28,9 +28,15 @@
 	<!-- <a class="btn btn-default" href="/" th:href="@{|/itemToDelete/${lists.id}/deletechecked|}" 
 		role="button">Delete Checked</a> -->
 	
+
+	 <a class="btn btn-success" href="/"
+		th:href="@{|/item/{id}/deletechecked|}" role="button">Delete
+		Checked Items</a> 
+
 	<!-- <a class="btn btn-success" href="/"
 		th:href="@{|/item/{id}/deletechecked|}" role="button">Delete
 		Checked Items</a> -->
+
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -44,8 +50,7 @@
 		
 			
 				<!-- <td><input type="checkbox" name="name1" />&nbsp;</td> -->
-												
-				<td><input type="checkbox" name="check" class="strikethrough"
+<td><input type="checkbox" name="check" class="strikethrough"
 						value="1"/> <label for="check" class="strikeThis"
 						th:text="${item.contents}">&nbsp;</label></td>
 						
