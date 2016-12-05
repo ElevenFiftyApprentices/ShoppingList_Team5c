@@ -222,7 +222,47 @@ public class IndexController {
 	
 	
 	//---------TRYING TO DELETE CHECKED CHECKBOXES  ---------
-
+	
+//	
+//	@GetMapping("/itemToDelete/{id}/check/{itemid}")
+//	public String itemCheck(Model model, @PathVariable(name = "id") int id,
+//			@PathVariable(name = "itemid") int itemid) {
+//		Items i = itemRepo.findOne(itemid);
+//		i.setChecked(true);
+//		itemRepo.save(i);
+//		model.addAttribute("Lists", listRepo.findOne(id));
+//		model.addAttribute("items", listRepo.findOne(id).getListItems());
+//		return "item";
+//		}
+//
+//	@GetMapping("/itemToDelete/{id}/deletechecked")
+//	public String deleteChecked(Model model, @PathVariable(name = "id") int id) {
+//		Lists l = listRepo.findOne(id);
+//		model.addAttribute("itemToDelete", l);
+//		model.addAttribute("items", l.getListItems());
+//		return "delete_checked";
+//		}
+//
+//	@PostMapping("/itemToDelete/{id}/deletechecked")
+//	public String deleteCheckedSave(Model model, @PathVariable(name = "id") int id) {
+//		Lists l = listRepo.findOne(id);
+//		List<Items> li = l.getListItems();
+//		ArrayList<Items> liTwo = new ArrayList<Items>();
+//		for (Items i : li) {
+//			if (i.isChecked == true) {
+//				liTwo.add(i);
+//			}
+//		}
+//		for (Items i2 : liTwo) {
+//			li.remove(i2);
+//			itemRepo.delete(i2);
+//		}
+//
+//		l.setListItems(li);
+//		listRepo.save(l);
+//		model.addAttribute("itemToDelete", l);
+//		return "item";
+//	}
 	
 }
 
