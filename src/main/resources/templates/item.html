@@ -3,9 +3,10 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="layouts/basic">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<style> {
+<!-- <style> {
 	border: 1px solid black;
 	border-collapse: collapse;
 	padding: 15px;
@@ -15,69 +16,52 @@
 	text-decoration: line-through
 }
 
-</style>
-
+</style> -->
 
 </head>
 <body layout:fragment="content">
-	<h1>Shopping Items</h1>
+	<h1>Items</h1>
 	<a class="btn btn-success" href="/" th:href="@{|/item/create|}"
 		role="button">Create New Item</a>
 	<a class="btn btn-success" href="/" th:href="@{|/item/deleteall|}"
 		role="button">Delete All Items</a>
-	<!-- <a class="btn btn-default" href="/" th:href="@{|/itemToDelete/${lists.id}/deletechecked|}" 
-		role="button">Delete Checked</a> -->
-	
-
-	 <a class="btn btn-success" href="/"
-		th:href="@{|/item/{id}/deletechecked|}" role="button">Delete
-		Checked Items</a> 
-
-	<!-- <a class="btn btn-success" href="/"
-		th:href="@{|/item/{id}/deletechecked|}" role="button">Delete
-		Checked Items</a> -->
 
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				
+				<th></th>
 				<th>Contents</th>
 				<th>Options</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="item : ${items}">
-		
+			<tr th:each="item : ${items}"> 
+	
+				<td style="padding-top: 20px" th:if="${item.isChecked} == true" >
+				<a th:href="@{|/item/${item.id}/check/|}">
+				<i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>
+                           
+                   <td style="padding-top: 20px" th:if="${item.isChecked} == false"><a
+                       th:href="@{|/item/${item.id}/check/|}"><i
+                           class="fa fa-square-o" aria-hidden="true"></i></a></td>
+                           
+                   <td style="padding-top: 20px" th:if="${item.isChecked} == true">
+                       <p style="text-decoration: line-through;"
+                           th:utext="${item.contents}"></p>
+                   </td>
+                   <td style="padding-top: 20px" th:if="${item.isChecked} == false"
+                       th:utext="${item.contents}"></td>
 			
-				<!-- <td><input type="checkbox" name="name1" />&nbsp;</td> -->
-<td><input type="checkbox" name="check" class="strikethrough"
-						value="1"/> <label for="check" class="strikeThis"
-						th:text="${item.contents}">&nbsp;</label></td>
-						
-				<!-- <td><input id="checkbox-id" type="checkbox" style="opacity:5" name="check" class="strikethrough"/> 
-				<label for="checkbox-id" class="strikeThis" th:text="${item.contents}">&nbsp;</label></td>
-						  -->
-				
-				<!-- <td th:if="${item.isChecked} == true">
-					<a th:href="@{|/list/${lists.id}/check/${item.id}|}">
-						<i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>
-				<td th:if="${item.isChecked} == false">
-					<a th:href="@{|/list/${lists.id}/check/${item.id}|}">
-						<i class="fa fa-square-o" aria-hidden="true"></i></a></td>
-				<td th:if="${item.isChecked} == true">
-					<p style="text-decoration: line-through;"
-						th:utext="${item.contents}"></p></td>
-				
-				<td th:if="${item.isChecked} == false" th:utext="${item.contents}"></td>		  
-				<td th:text="${item.contents}"></td> -->
-				
+
 				<td><a class="btn btn-primary" href="/"
 					th:href="@{|/item/${item.id}}" role="button">Show</a></td>
 				<td><a class="btn btn-danger" href="/"
 					th:href="@{|/item/${item.id}/delete|}" role="button">Delete</a></td>
+				
 			</tr>
 		</tbody>
-
 	</table>
+
+
 </body>
 </html>

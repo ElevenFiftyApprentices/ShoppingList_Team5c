@@ -6,7 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "notes")
@@ -15,11 +18,12 @@ public class Notes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int id;
-	
+
 	public int shoppingListItemId;
 	public String body;
 	public Date createdUtc;
 	public Date modifiedUtc;
+	
 	public int getId() {
 		return id;
 	}
@@ -47,6 +51,7 @@ public class Notes {
 	public void setCreatedUtc(Date createdUtc) {
 		this.createdUtc = createdUtc;
 	}
+	
 	public void setModifiedUtc(Date modifiedUtc) {
 		this.modifiedUtc = modifiedUtc;
 	}

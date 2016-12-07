@@ -1,11 +1,15 @@
 package org.elevenfifty.shoppingapplication.beans;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,12 +22,13 @@ public class Items {
 	
 	public int shoppingListId;
 	public String contents;
-	public int priority;
+	public String priority;
 	
 	//use boolean to keep it checked!!!
 	public boolean isChecked;
 	public Date createdUtc;
 	public Date modifiedUtc;
+	
 	public int getId() {
 		return id;
 	}
@@ -33,7 +38,7 @@ public class Items {
 	public String getContents() {
 		return contents;
 	}
-	public int getPriority() {
+	public String getPriority() {
 		return priority;
 	}
 	public boolean isChecked() {
@@ -54,7 +59,7 @@ public class Items {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	public void setPriority(int priority) {
+	public void setPriority(String priority) {
 		this.priority = priority;
 	}
 	public void setChecked(boolean isChecked) {

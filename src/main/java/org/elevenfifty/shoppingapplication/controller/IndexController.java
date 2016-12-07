@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.elevenfifty.shoppingapplication.beans.Items;
 import org.elevenfifty.shoppingapplication.beans.Lists;
+import org.elevenfifty.shoppingapplication.beans.Notes;
 import org.elevenfifty.shoppingapplication.repository.ItemRepository;
 import org.elevenfifty.shoppingapplication.repository.ListRepository;
 import org.elevenfifty.shoppingapplication.repository.NoteRepository;
@@ -98,9 +99,7 @@ public class IndexController {
 	@GetMapping("/list/{id}/edit")
 	public String listEdit(Model model, @PathVariable(name = "id") Integer id) {
 		model.addAttribute("id", id);
-
 		Lists u = listRepo.findOne(id);
-
 		model.addAttribute("lists", u);
 		return "list_edit";
 	}
@@ -225,6 +224,43 @@ public class IndexController {
 	
 	//---------TRYING TO DELETE CHECKED CHECKBOXES  ---------
 	
+	
+	@GetMapping("/item/{id}/check/")
+	   public String checkTheBox(Model model, @PathVariable(name = "id") int id) {
+//	        User currentUser = ListController.getCurrentUser();
+//	        if(!currentUser.equals(listRepo.findOne(id).getUser())){
+//	            return "redirect:/ListsofLists";
+//	        } else {
+	       Items i = itemRepo.findOne(id);
+	       i.setChecked(true);
+	       itemRepo.save(i);
+	       model.addAttribute("items", itemRepo.findAll());
+//	        model.addAttribute("lists", listRepo.findOne(id).getLists());
+	       return "item";
+	       }
+	
+	@GetMapping("/item/{id}/uncheck/")
+	   public String uncheckTheBox(Model model, @PathVariable(name = "id") int id) {
+//	        User currentUser = ListController.getCurrentUser();
+//	        if(!currentUser.equals(listRepo.findOne(id).getUser())){
+//	            return "redirect:/ListsofLists";
+//	        } else {
+	       Items i = itemRepo.findOne(id);
+	       i.setChecked(false);
+	       itemRepo.save(i);
+	       model.addAttribute("items", itemRepo.findAll());
+//	        model.addAttribute("lists", listRepo.findOne(id).getLists());
+	       return "redirect:/item/{id}";
+	       }
+	
+	
+
+
+	
+	
+	
+	
+	
 //	
 //	@GetMapping("/itemToDelete/{id}/check/{itemid}")
 //	public String itemCheck(Model model, @PathVariable(name = "id") int id,
@@ -266,6 +302,12 @@ public class IndexController {
 //		return "item";
 //	}
 	
+//	------------------------    WORKING ON PRIORITY    --------------------------
+	
+	
+	
+	
+
 }
 
 
