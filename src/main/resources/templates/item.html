@@ -20,7 +20,7 @@
 
 </head>
 <body layout:fragment="content">
-	<h1>Items</h1>
+	<h1>List Items</h1>
 	<a class="btn btn-default" href="/" th:href="@{|/item/create|}"
 		role="button"  style="background-color:#b30000; color:white;">Create New Item</a>
 	<a class="btn btn-default" href="/" th:href="@{|/item/deleteall|}"
@@ -61,7 +61,8 @@
 			</tr>
 		</tbody>
 	</table>
-
-
+	
+	<a href="/list">Back</a>
+	
 </body>
 </html>

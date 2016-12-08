@@ -30,7 +30,8 @@
 		<tbody>
 			<tr th:each="list : ${lists}">
 				<td th:text="${list.name}"></td>
-				<td><span class="pull-left" style="padding: 2px; align: center;"><a class="btn btn-default" href="/" th:href="@{|/list/${list.id}}" role="button" style="background-color:white">Show</a></span></td>
+				<td><span class="pull-left" style="padding: 2px; align: center;"><a class="btn btn-default" href="/" th:href="@{|/list/${list.id}}" role="button" style="background-color:white">List Details</a></span></td>
+				<td><span class="pull-left" style="padding: 2px; align: center;"><a class="btn btn-default" href="/" th:href="@{/item}" role="button" style="background-color:white">List Items</a></span></td>
 				<td><a class="btn btn-default" href="/" th:href="@{|/list/${list.id}/delete|}" role="button" style="background-color:white; align: center;" >Delete</a></td>
 			</tr>
 		</tbody>

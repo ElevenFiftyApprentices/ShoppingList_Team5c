@@ -24,7 +24,6 @@ public class Lists {
 	public String color;
 	public Date createdUtc;
 	public Date modifiedUtc;
-
 	
 	public int getId() {
 		return id;
