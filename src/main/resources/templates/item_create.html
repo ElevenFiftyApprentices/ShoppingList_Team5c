@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/basic">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body layout:fragment="content">
+
+	<div class="row">
+	
+	<h1>Add Item</h1>
+	
+		<form method="POST" th:object="${items}">
+		<input type="hidden" th:value="*{id}"/>
+		
+			<div class="form-group">
+				<label for="contents">Content</label>
+				<input type="text" class="form-control" name="contents" placeholder="Content" th:field="*{contents}"/>
+				<span th:if="${#fields.hasErrors('contents')}" th:errors="*{contents}">Content Error</span>
+			</div>
+			<div class="form-group">
+		    	<label for="bought">Priority:</label>
+		    	<select class="form-control" name="priority">
+		    		<option th:selected="*{priority} == 1" value="1">Grab it now!</option>
+		    		<option th:selected="*{priority} == 2" value="2">Need it soon!</option>
+		    		<option th:selected="*{priority} == 3" value="3">It can wait!</option>
+		    	</select>
+		    </div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

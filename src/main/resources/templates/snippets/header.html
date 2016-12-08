@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.springframework.org/schema/security">
+<head>
+
+</head>
+<body>
+	<nav class="nnavbar navbar-default navbar-fixed-top"
+		th:fragment="header">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".nav-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home">SHOPPING LIST</a>
+			</div>
+			
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#" th:href="@{/list}">LISTS</a></li>
+					<!-- <li><a href="#" th:href="@{/item}">ITEMS</a></li> -->					
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+</body>
+</html>
