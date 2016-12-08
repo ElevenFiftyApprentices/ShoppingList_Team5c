@@ -25,6 +25,7 @@ public class Lists {
 	public Date createdUtc;
 	public Date modifiedUtc;
 
+	
 	public int getId() {
 		return id;
 	}
