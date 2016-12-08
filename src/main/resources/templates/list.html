@@ -19,7 +19,7 @@
 <div class = "row">
 
 	<h1>Lists</h1>
-	<a class="btn btn-success" href="/" th:href="@{|/list/create|}" role="button">Create New List</a>
+	<a class="btn btn-default" href="/" th:href="@{|/list/create|}" role="button" style="background-color:#b30000; color:white; width:125px;">Create New List</a>
 	<table class = "table table-striped table-hover">
 		<thead>
 			<tr>
@@ -30,8 +30,9 @@
 		<tbody>
 			<tr th:each="list : ${lists}">
 				<td th:text="${list.name}"></td>
-				<td><span class="pull-left" style="padding: 5px"><a class="btn btn-default" href="/" th:href="@{|/list/${list.id}}" role="button" style="background-color:white">Show</a></span></td>
-				<td><a class="btn btn-default" href="/" th:href="@{|/list/${list.id}/delete|}" role="button" style="background-color:#cc0000; color:white; float:left" >Delete</a></td>
+				<td><span class="pull-left" style="padding: 2px; align: center;"><a class="btn btn-default" href="/" th:href="@{|/list/${list.id}}" role="button" style="background-color:white">List Details</a></span></td>
+				<td><span class="pull-left" style="padding: 2px; align: center;"><a class="btn btn-default" href="/" th:href="@{/item}" role="button" style="background-color:white">List Items</a></span></td>
+				<td><a class="btn btn-default" href="/" th:href="@{|/list/${list.id}/delete|}" role="button" style="background-color:white; align: center;" >Delete</a></td>
 			</tr>
 		</tbody>
 	</table>
