@@ -239,6 +239,22 @@ public class IndexController {
 	       return "redirect:/item";
 	       }
 	
+	@GetMapping("/item/{id}/uncheck/")
+	   public String uncheckTheBox(Model model, @PathVariable(name = "id") int id) {
+//	        User currentUser = ListController.getCurrentUser();
+//	        if(!currentUser.equals(listRepo.findOne(id).getUser())){
+//	            return "redirect:/ListsofLists";
+//	        } else {
+	       Items i = itemRepo.findOne(id);
+	       i.setChecked(false);
+	       itemRepo.save(i);
+	       model.addAttribute("items", itemRepo.findAll());
+//	        model.addAttribute("lists", listRepo.findOne(id).getLists());
+	       return "redirect:/item";
+	       }
+	
+	
+	
 //	@GetMapping("/item/{id}/uncheck/")
 //	   public String uncheckTheBox(Model model, @PathVariable(name = "id") int id) {
 ////	        User currentUser = ListController.getCurrentUser();
@@ -309,6 +325,3 @@ public class IndexController {
 	
 
 }
-
-
-
