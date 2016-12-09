@@ -22,7 +22,7 @@ public class Items {
 	
 	public int shoppingListId;
 	public String contents;
-	public String priority;
+	public int priority;
 	
 	//use boolean to keep it checked!!!
 	public boolean isChecked;
@@ -38,7 +38,7 @@ public class Items {
 	public String getContents() {
 		return contents;
 	}
-	public String getPriority() {
+	public int getPriority() {
 		return priority;
 	}
 	public boolean isChecked() {
@@ -59,7 +59,7 @@ public class Items {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	public void setPriority(String priority) {
+	public void setPriority(int priority) {
 		this.priority = priority;
 	}
 	public void setChecked(boolean isChecked) {

@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS heroku_df4c7db4409cdfa.lists (
 
 CREATE TABLE IF NOT EXISTS heroku_df4c7db4409cdfa.items (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  shopping_list_id INT(30) NOT NULL,
+  shopping_list_id INT NOT NULL,
   contents VARCHAR(200) NOT NULL,
   priority INT UNSIGNED NOT NULL,
   is_checked tinyint(1) NOT NULL DEFAULT 1,
