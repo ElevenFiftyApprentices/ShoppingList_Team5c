@@ -38,7 +38,7 @@
 			<tr th:each="item : ${items}"> 
 	
 				<td style="padding-top: 20px" th:if="${item.isChecked} == true" >
-				<a th:href="@{|/item/${item.id}/check/|}">
+				<a th:href="@{|/item/${item.id}/uncheck/|}">
 				<i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>
                            
                    <td style="padding-top: 20px" th:if="${item.isChecked} == false"><a
