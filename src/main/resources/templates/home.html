@@ -3,11 +3,36 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="layouts/basic">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body layout:fragment="content">
-	<h1 align="center">Shopping List Application</h1>
-
-	<h3 align="center">Made to Make Life Easier</h3>
+<body layout:fragment="content" background="listbackground.jpg" >
+	
+	<div>
+		<p>&nbsp;</p>
+	</div>
+<!-- 	<div style="width:32%; height:100px;border:1px solid #000; margin-bottom: 10px; 
+		margin-top: 30px; text-align: center; display: inline-block; border-radius: 50px;
+		background-color: #990000">Get Organized</div>
+	
+	<div style="width:32%; height:100px;border:1px solid #000; margin-bottom: 10px; 
+		margin-top: 30px; text-align: center; display: inline-block; border-radius: 50px;
+		margin-left: 10px; margin-right: 10px;">Stay Organized</div>
+	
+	<div style="width:32%; height:100px;border:1px solid #000; margin-bottom: 10px; 
+		margin-top: 30px; text-align: center; display: inline-block; border-radius: 50px;">Live Organized</div> -->
+		
+	<div class="jumbotron">
+  		<h1 align="center" style="padding-top: 50px;">Shopping List Application</h1>
+  			<p style="text-align: center">Made to Make Your Life Easier</p>
+  			<p><a class="btn btn-default btn-lg" style="background-color:#b30000; color: white; margin: 0 auto; position:relative; top: 50%; left: 40%" th:href="@{/list}">Make a List</a></p>
+	</div>
+	
+	<!-- 
+	body {
+    background-image: url("paper.gif");
+}
+	 -->
+	
 </body>
 </html>

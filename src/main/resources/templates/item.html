@@ -28,26 +28,26 @@
 		<thead>
 			<tr>
 				<th></th>
-				<th>Contents</th>
+				<th>Item</th>
 				<th>Options</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="item : ${items}"> 
 	
-				<td style="padding-top: 20px" th:if="${item.isChecked} == true" >
+				<td style="padding-top: 14px" th:if="${item.isChecked} == true" >
 				<a th:href="@{|/item/${item.id}/uncheck/|}">
 				<i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>
                            
-                   <td style="padding-top: 20px" th:if="${item.isChecked} == false"><a
+                   <td style="padding-top: 14px; " th:if="${item.isChecked} == false"><a
                        th:href="@{|/item/${item.id}/check/|}"><i
                            class="fa fa-square-o" aria-hidden="true"></i></a></td>
                            
-                   <td style="padding-top: 20px" th:if="${item.isChecked} == true">
+                   <td style="padding-top: 14px;" th:if="${item.isChecked} == true">
                        <p style="text-decoration: line-through;"
                            th:utext="${item.contents}"></p>
                    </td>
-                   <td style="padding-top: 20px" th:if="${item.isChecked} == false"
+                   <td style="padding-top: 14px;" th:if="${item.isChecked} == false"
                        th:utext="${item.contents}"></td>
 			
 
@@ -60,7 +60,7 @@
 		</tbody>
 	</table>
 	
-	<a href="/list">Back</a>
+	<a class="btn btn-warning" href="/list" style="background-color:#b30000; color:white; margin-bottom: 10px;">Back</a>
 	
 </body>
 </html>
