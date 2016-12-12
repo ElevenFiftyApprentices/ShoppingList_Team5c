@@ -31,7 +31,9 @@
 		<form method="POST" th:object="${lists}">
 			<input type="hidden" th:value="*{id}" />
 
-			<button type="submit" class="btn btn-danger">Delete</button>
+			<button type="submit" class="btn btn-danger" style="margin-bottom: 10px;">Delete</button>
+			<a class="btn btn-danger" href="/list" style="margin-bottom: 10px;">Back</a>
+	
 
 			<div th:unless="${lists}">
 				<h3>No List Found</h3>
